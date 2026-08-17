@@ -37,10 +37,7 @@ export function Films() {
                     loading="lazy"
                     className="aspect-[16/9] w-full object-cover brightness-[0.72] transition-all duration-[1200ms] group-hover:scale-[1.03] group-hover:brightness-90"
                   />
-                  <span
-                    aria-hidden
-                    className="absolute inset-0 flex items-center justify-center"
-                  >
+                  <span aria-hidden className="absolute inset-0 flex items-center justify-center">
                     <span className="flex h-20 w-20 items-center justify-center rounded-full border border-gold/70 text-paper transition-transform duration-500 group-hover:scale-110">
                       <svg width="18" height="20" viewBox="0 0 18 20" fill="currentColor">
                         <path d="M0 0l18 10L0 20z" />

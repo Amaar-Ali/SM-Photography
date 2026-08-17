@@ -49,7 +49,12 @@ export function Enquiry() {
           <GoldRule className="mt-8 max-w-[220px]" />
 
           <div className="mt-10 space-y-7">
-            <Field label="Who's getting married?" value={names} onChange={setNames} placeholder="Your names" />
+            <Field
+              label="Who's getting married?"
+              value={names}
+              onChange={setNames}
+              placeholder="Your names"
+            />
             <div className="grid gap-7 sm:grid-cols-2">
               <Field label="Where?" value={city} onChange={setCity} placeholder="City / venue" />
               <Field label="When?" value={dates} onChange={setDates} placeholder="Dates or month" />

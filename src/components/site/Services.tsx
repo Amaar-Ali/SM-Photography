@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { photo, type Photo } from "@/lib/photos";
 import { GoldRule } from "./Ornaments";
 
@@ -61,8 +62,8 @@ export function Services() {
           <ul className="divide-y divide-[var(--border)]">
             {services.map((s, i) => (
               <li key={s.title}>
-                <a
-                  href="/contact"
+                <Link
+                  to="/contact"
                   onMouseEnter={() => setActive(i)}
                   onMouseLeave={() => setActive(null)}
                   onFocus={() => setActive(i)}
@@ -75,7 +76,7 @@ export function Services() {
                   <span className="ml-auto text-xs text-[var(--muted-foreground)] md:text-sm">
                     {s.note}
                   </span>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -84,7 +85,10 @@ export function Services() {
           <div
             aria-hidden
             className="pointer-events-none absolute right-[8%] top-1/2 hidden w-[260px] -translate-y-1/2 transition-all duration-500 lg:block"
-            style={{ opacity: active === null ? 0 : 1, transform: `translateY(-50%) scale(${active === null ? 0.96 : 1})` }}
+            style={{
+              opacity: active === null ? 0 : 1,
+              transform: `translateY(-50%) scale(${active === null ? 0.96 : 1})`,
+            }}
           >
             {active !== null && (
               <img

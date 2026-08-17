@@ -41,7 +41,7 @@ function Index() {
     <>
       <ArchClipDefs />
       <Cursor />
-      <Nav />
+      <Nav overlay />
       <main>
         <Hero />
         <Introduction />

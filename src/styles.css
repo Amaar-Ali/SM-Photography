@@ -59,6 +59,12 @@
     overflow-x: hidden;
   }
 
+  @media (max-width: 767px) {
+    body {
+      padding-bottom: 4.5rem;
+    }
+  }
+
   ::selection {
     background: var(--saffron);
     color: var(--ink);

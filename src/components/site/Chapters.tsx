@@ -165,10 +165,9 @@ function ChapterPanel({ chapter }: { chapter: Chapter }) {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const io = new IntersectionObserver(
-      ([e]) => e?.isIntersecting && setShown(true),
-      { threshold: 0.25 },
-    );
+    const io = new IntersectionObserver(([e]) => e?.isIntersecting && setShown(true), {
+      threshold: 0.25,
+    });
     io.observe(el);
     return () => io.disconnect();
   }, []);

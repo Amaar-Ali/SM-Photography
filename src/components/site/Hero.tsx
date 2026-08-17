@@ -119,10 +119,7 @@ export function Hero() {
             />
           </svg>
 
-          <Marigold
-            className="absolute -left-9 top-1/3 hidden text-gold/50 md:block"
-            size={34}
-          />
+          <Marigold className="absolute -left-9 top-1/3 hidden text-gold/50 md:block" size={34} />
           <Marigold
             className="absolute -right-9 bottom-1/4 hidden text-saffron/50 md:block"
             size={26}

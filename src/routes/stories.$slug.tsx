@@ -14,7 +14,10 @@ export const Route = createFileRoute("/stories/$slug")({
   head: ({ loaderData }) => {
     if (!loaderData) {
       return {
-        meta: [{ title: "Story unavailable — SM Photography" }, { name: "robots", content: "noindex" }],
+        meta: [
+          { title: "Story unavailable — SM Photography" },
+          { name: "robots", content: "noindex" },
+        ],
       };
     }
     const t = `${loaderData.story.title} — SM Photography`;
@@ -96,7 +99,9 @@ function StoryPage() {
                         alt={img.alt}
                         loading={pi === 0 && i === 0 ? "eager" : "lazy"}
                         className="w-full object-cover"
-                        style={{ aspectRatio: i === 0 && part.images.length === 3 ? "16/9" : "4/5" }}
+                        style={{
+                          aspectRatio: i === 0 && part.images.length === 3 ? "16/9" : "4/5",
+                        }}
                       />
                     </Reveal>
                   ))}

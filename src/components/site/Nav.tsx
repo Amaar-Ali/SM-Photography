@@ -135,6 +135,15 @@ export function Nav({ overlay = false }: { overlay?: boolean }) {
           </a>
         </nav>
       </div>
+
+      <a
+        href={waLink(`Hi ${site.name}, I'd like to check availability for our wedding date.`)}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="meta fixed inset-x-4 bottom-4 z-30 border border-gold bg-maroon py-3.5 text-center text-paper shadow-[0_12px_40px_-16px_oklch(0.18_0.008_30/0.8)] md:hidden"
+      >
+        Check availability
+      </a>
     </>
   );
 }
