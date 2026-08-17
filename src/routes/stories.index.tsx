@@ -28,7 +28,7 @@ function StoriesIndex() {
     <>
       <ArchClipDefs />
       <Cursor />
-      <Nav solid />
+      <Nav />
       <main className="surface-paper pb-28 pt-36 md:pt-48">
         <div className="relative z-10 mx-auto max-w-[1500px] px-5 md:px-10">
           <p className="meta text-[var(--muted-foreground)]">The albums</p>
