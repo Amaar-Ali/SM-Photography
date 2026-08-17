@@ -2,6 +2,8 @@
 
 Wedding photography and cinematography studio site for SM Photography — Jaipur, Delhi NCR, and destination weddings.
 
+Live: [indian-album-unfolding.vercel.app](https://indian-album-unfolding.vercel.app)
+
 The site is built as a digital wedding album: invitation hero, ritual chapters, stories, films, and a WhatsApp / email enquiry path. Copy and contact details come from [smphotography.in](https://smphotography.in). Photographs are the studio’s published work.
 
 ![Hero](docs/screenshots/hero-desktop.png)
@@ -14,7 +16,7 @@ The site is built as a digital wedding album: invitation hero, ritual chapters, 
 - Published Vimeo teasers (no autoplay audio)
 - Editorial services list and enquiry form (WhatsApp + email)
 - Real studio contact details, hours, and Jaipur address
-- LocalBusiness / Photographer JSON-LD, reduced-motion support, keyboard-visible focus
+- LocalBusiness / Photographer JSON-LD, sitemap, reduced-motion support, keyboard-visible focus
 
 ![Stories](docs/screenshots/stories-desktop.png)
 
@@ -27,6 +29,10 @@ The site is built as a digital wedding album: invitation hero, ritual chapters, 
 - Vite 8 + Nitro (Vercel preset)
 - Tailwind CSS 4
 - TanStack Router / Query
+
+## Architecture
+
+SSR React app. `src/routes` is the page tree. `src/components/site` renders the album UI. `src/lib/site.ts` holds verified business data; `src/lib/photos.ts` maps local WebP files in `public/photos`. Enquiry does not hit a backend — it opens WhatsApp or a mailto with the form text. Nitro builds a Vercel serverless handler plus static assets.
 
 ## Routes
 
@@ -44,13 +50,17 @@ Story slugs: `the-wedding-day`, `the-functions`, `before-the-wedding`.
 Requires Node.js 22+.
 
 ```sh
-git clone https://github.com/Amaar-Ali/indian-album-unfolding.git
-cd indian-album-unfolding
+git clone https://github.com/Amaar-Ali/SM-Photography.git
+cd SM-Photography
 npm install
 npm run dev
 ```
 
-Dev server: Vite (`vite dev`). No environment variables are required.
+Dev server: Vite (`vite dev`).
+
+## Environment variables
+
+None. No `.env` file is required for local or production.
 
 ## Scripts
 
@@ -82,6 +92,8 @@ Vercel, TanStack Start preset. Build command is `vite build`. Nitro emits `.verc
 ```sh
 npx vercel --prod
 ```
+
+Production URL: https://indian-album-unfolding.vercel.app
 
 No secrets to configure. Enquiry goes to WhatsApp (`+91 70233 36664`) and `Dasman702@gmail.com`.
 

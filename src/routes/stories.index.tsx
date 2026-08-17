@@ -4,6 +4,7 @@ import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { CornerBorder, GoldRule, Reveal, ArchClipDefs } from "@/components/site/Ornaments";
 import { stories } from "@/lib/stories";
+import { absUrl } from "@/lib/site";
 
 const title = "Wedding Stories — SM Photography";
 const description =
@@ -17,8 +18,12 @@ export const Route = createFileRoute("/stories/")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: absUrl("/stories") },
+      { property: "og:image", content: absUrl("/photos/hero.webp") },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: absUrl("/photos/hero.webp") },
     ],
+    links: [{ rel: "canonical", href: absUrl("/stories") }],
   }),
   component: StoriesIndex,
 });

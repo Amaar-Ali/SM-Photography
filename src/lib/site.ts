@@ -19,7 +19,10 @@ export const site = {
   mapsUrl:
     "https://www.google.com/maps/search/?api=1&query=Windsor+Plaza+309+Sansar+Chandra+Road+Sindhi+Camp+Jaipur+302001",
   website: "https://smphotography.in",
+  origin: "https://indian-album-unfolding.vercel.app",
 } as const;
+
+export const absUrl = (path = "/") => `${site.origin}${path.startsWith("/") ? path : `/${path}`}`;
 
 export const waLink = (text?: string) =>
   `https://api.whatsapp.com/send?phone=${site.whatsapp}${text ? `&text=${encodeURIComponent(text)}` : ""}`;

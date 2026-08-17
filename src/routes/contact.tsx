@@ -4,7 +4,7 @@ import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Enquiry } from "@/components/site/Enquiry";
 import { ArchClipDefs, GoldRule } from "@/components/site/Ornaments";
-import { site } from "@/lib/site";
+import { absUrl, site } from "@/lib/site";
 
 const title = "Contact SM Photography — Wedding Enquiries";
 const description =
@@ -18,8 +18,12 @@ export const Route = createFileRoute("/contact")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: absUrl("/contact") },
+      { property: "og:image", content: absUrl("/photos/hero.webp") },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: absUrl("/photos/hero.webp") },
     ],
+    links: [{ rel: "canonical", href: absUrl("/contact") }],
   }),
   component: ContactPage,
 });

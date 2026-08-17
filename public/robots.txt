@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://indian-album-unfolding.vercel.app/sitemap.xml

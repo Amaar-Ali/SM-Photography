@@ -4,6 +4,7 @@ import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { ArchClipDefs, GoldRule, MehndiLine, Reveal } from "@/components/site/Ornaments";
 import { getStory, stories } from "@/lib/stories";
+import { absUrl } from "@/lib/site";
 
 export const Route = createFileRoute("/stories/$slug")({
   loader: ({ params }) => {
@@ -22,6 +23,8 @@ export const Route = createFileRoute("/stories/$slug")({
     }
     const t = `${loaderData.story.title} — SM Photography`;
     const d = loaderData.story.note;
+    const url = absUrl(`/stories/${loaderData.story.slug}`);
+    const image = absUrl(loaderData.story.cover.src);
     return {
       meta: [
         { title: t },
@@ -29,10 +32,12 @@ export const Route = createFileRoute("/stories/$slug")({
         { property: "og:title", content: t },
         { property: "og:description", content: d },
         { property: "og:type", content: "article" },
-        { property: "og:image", content: loaderData.story.cover.src },
+        { property: "og:url", content: url },
+        { property: "og:image", content: image },
         { name: "twitter:card", content: "summary_large_image" },
-        { name: "twitter:image", content: loaderData.story.cover.src },
+        { name: "twitter:image", content: image },
       ],
+      links: [{ rel: "canonical", href: url }],
     };
   },
   notFoundComponent: StoryNotFound,

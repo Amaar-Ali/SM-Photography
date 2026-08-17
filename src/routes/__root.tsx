@@ -10,7 +10,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { site } from "../lib/site";
+import { absUrl, site } from "../lib/site";
 
 const title = "SM Photography | Wedding Photographer in Delhi NCR & Jaipur";
 const description =
@@ -24,8 +24,9 @@ const jsonLd = {
   description,
   telephone: site.phonePrimary,
   email: site.email,
-  url: site.website,
-  image: "/photos/hero.webp",
+  url: site.origin,
+  image: absUrl("/photos/hero.webp"),
+  sameAs: [site.website],
   address: {
     "@type": "PostalAddress",
     streetAddress: "3rd Floor, Windsor Plaza, 309 Sansar Chandra Road, Sindhi Camp",
@@ -102,11 +103,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: "/photos/hero.webp" },
+      { property: "og:image", content: absUrl("/photos/hero.webp") },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: title },
       { name: "twitter:description", content: description },
-      { name: "twitter:image", content: "/photos/hero.webp" },
+      { name: "twitter:image", content: absUrl("/photos/hero.webp") },
       { name: "theme-color", content: "#4A111D" },
     ],
     links: [
