@@ -100,3 +100,13 @@ No secrets to configure. Enquiry goes to WhatsApp (`+91 70233 36664`) and `Dasma
 ## Credits
 
 Photography, films, and client quotes belong to SM Photography. Studio: Windsor Plaza, Sindhi Camp, Jaipur.
+
+## Community
+
+- [Code of Conduct](CODE_OF_CONDUCT.md)
+- [Contributing](CONTRIBUTING.md)
+- [Security](SECURITY.md)
+
+## License
+
+Source code is licensed under the [MIT License](LICENSE). Photographs, films, and client quotes remain the property of SM Photography and are **not** covered by MIT.

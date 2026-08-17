@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/Amaar-Ali/SM-Photography/blob/main/SECURITY.md
+    about: Report security issues privately — do not file a public issue.
+  - name: SM Photography studio
+    url: https://indian-album-unfolding.vercel.app/contact
+    about: Wedding booking and studio enquiries go through the contact page, not GitHub.
